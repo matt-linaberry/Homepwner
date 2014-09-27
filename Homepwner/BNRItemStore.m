@@ -55,4 +55,22 @@
     [self.privateItems addObject:item];
     return item;
 }
+
+- (void) removeItem:(BNRItem *)item
+{
+    [self.privateItems removeObjectIdenticalTo:item];
+}
+
+- (void) moveItemAtIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex
+{
+    if (fromIndex == toIndex)
+    {
+        return; // do nothing!
+    }
+    
+    BNRItem *item = self.privateItems[fromIndex]; //copy the source item
+    
+    [self.privateItems removeObjectAtIndex:fromIndex];
+    [self.privateItems insertObject:item atIndex:toIndex];
+}
 @end

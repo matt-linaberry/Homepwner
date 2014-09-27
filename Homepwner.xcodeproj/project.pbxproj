@@ -18,6 +18,7 @@
 		9911BFD819D1058700B73C3F /* BNRItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9911BFD719D1058700B73C3F /* BNRItemsViewController.m */; };
 		9911BFDE19D109E100B73C3F /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9911BFDD19D109E100B73C3F /* BNRItem.m */; };
 		9911BFE119D10A5400B73C3F /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9911BFE019D10A5400B73C3F /* BNRItemStore.m */; };
+		996EA90219D72D5100CB4673 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 996EA90119D72D5100CB4673 /* HeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		9911BFDD19D109E100B73C3F /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
 		9911BFDF19D10A5400B73C3F /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
 		9911BFE019D10A5400B73C3F /* BNRItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemStore.m; sourceTree = "<group>"; };
+		996EA90119D72D5100CB4673 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				9911BFB819D104D000B73C3F /* DetailViewController.m */,
 				9911BFD619D1058700B73C3F /* BNRItemsViewController.h */,
 				9911BFD719D1058700B73C3F /* BNRItemsViewController.m */,
+				996EA90119D72D5100CB4673 /* HeaderView.xib */,
 				9911BFBA19D104D000B73C3F /* Main.storyboard */,
 				9911BFBD19D104D000B73C3F /* Images.xcassets */,
 				9911BFBF19D104D000B73C3F /* LaunchScreen.xib */,
@@ -223,6 +226,7 @@
 				9911BFBC19D104D000B73C3F /* Main.storyboard in Resources */,
 				9911BFC119D104D000B73C3F /* LaunchScreen.xib in Resources */,
 				9911BFBE19D104D000B73C3F /* Images.xcassets in Resources */,
+				996EA90219D72D5100CB4673 /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +441,7 @@
 				9911BFD219D104D000B73C3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9911BFD319D104D000B73C3F /* Build configuration list for PBXNativeTarget "HomepwnerTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +450,7 @@
 				9911BFD519D104D000B73C3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
