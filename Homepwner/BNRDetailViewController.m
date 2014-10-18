@@ -26,6 +26,14 @@
     self.serialNumberField.text = item.serialNumber;
     self.valueField.text = [NSString stringWithFormat:@"%d", item.valueInDollars];
     
+    // silver!
+    UIToolbar *numberToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0,0,320,50)];
+    numberToolbar.items = [NSArray arrayWithObjects:
+                           [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonSystemItemCancel target:self action:@selector(cancelNumberPad)],
+                           [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil], nil];
+    
+    self.valueField.inputAccessoryView = numberToolbar;
+    
     // format the date to something readable
     static NSDateFormatter *dateFormatter;
     if (!dateFormatter)
@@ -36,6 +44,10 @@
     }
     
     self.dateLabel.text = [dateFormatter stringFromDate:item.dateCreated];
+}
+
+-(void)cancelNumberPad{
+    [self.valueField resignFirstResponder];
 }
 
 - (void) viewWillDisappear:(BOOL)animated
