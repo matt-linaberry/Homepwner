@@ -12,7 +12,6 @@
 #import "BNRDetailViewController.h"
 
 @interface BNRItemsViewController ()
-@property (nonatomic, strong) IBOutlet UIView *headerView;
 @end
 
 @implementation BNRItemsViewController
@@ -21,7 +20,15 @@
     self = [super initWithStyle:UITableViewStylePlain];
     if (self)
     {
-
+        UINavigationItem *navItem = self.navigationItem;
+        navItem.title = @"Homepwner";
+        
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                             target:self
+                                                                             action:@selector(addNewItem:)];
+        
+        navItem.rightBarButtonItem = bbi;
+        navItem.leftBarButtonItem = self.editButtonItem;
     }
     return self;
     
@@ -32,13 +39,18 @@
     return [self init];
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
+}
+
 - (void) viewDidLoad
 {
     [super viewDidLoad];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
-    
-    UIView *header = self.headerView;
-    [self.tableView setTableHeaderView:header];
+
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -69,17 +81,6 @@
     return cell;
 }
 
-- (UIView *)headerView
-{
-    if (!_headerView)
-    {
-        [[NSBundle mainBundle] loadNibNamed:@"HeaderView"
-                                      owner:self
-                                    options:nil];
-    }
-    
-    return _headerView;
-}
 
 - (IBAction) addNewItem:(id)sender
 {
@@ -91,22 +92,6 @@
     // now add the new row
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
     
-}
-
-- (IBAction) toggleEditingMode:(id)sender
-{
-    if (self.isEditing)
-    {
-        // turn off editing
-        [sender setTitle:@"Edit" forState:UIControlStateNormal];
-        [self setEditing:NO animated:NO];
-    }
-    else
-    {
-        // turn on editing
-        [sender setTitle:@"Done" forState:UIControlStateNormal];
-        [self setEditing:YES animated:YES];
-    }
 }
 
 // UITableViewController protocol methods
