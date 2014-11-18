@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99070D031A1AE12200B57DD7 /* BNRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 99070D021A1AE12200B57DD7 /* BNRImageStore.m */; };
 		9911BFB019D104D000B73C3F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9911BFAF19D104D000B73C3F /* main.m */; };
 		9911BFB319D104D000B73C3F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9911BFB219D104D000B73C3F /* AppDelegate.m */; };
 		9911BFB619D104D000B73C3F /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9911BFB519D104D000B73C3F /* MasterViewController.m */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		99070D011A1AE12200B57DD7 /* BNRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageStore.h; sourceTree = "<group>"; };
+		99070D021A1AE12200B57DD7 /* BNRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageStore.m; sourceTree = "<group>"; };
 		9911BFAA19D104D000B73C3F /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9911BFAE19D104D000B73C3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9911BFAF19D104D000B73C3F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -116,6 +119,8 @@
 				9911BFAD19D104D000B73C3F /* Supporting Files */,
 				991ECE6319F0A93C00956285 /* BNRDetailViewController.h */,
 				991ECE6419F0A93C00956285 /* BNRDetailViewController.m */,
+				99070D011A1AE12200B57DD7 /* BNRImageStore.h */,
+				99070D021A1AE12200B57DD7 /* BNRImageStore.m */,
 				991ECE6519F0A93C00956285 /* BNRDetailViewController.xib */,
 			);
 			path = Homepwner;
@@ -253,6 +258,7 @@
 			files = (
 				991ECE6619F0A93C00956285 /* BNRDetailViewController.m in Sources */,
 				9911BFB319D104D000B73C3F /* AppDelegate.m in Sources */,
+				99070D031A1AE12200B57DD7 /* BNRImageStore.m in Sources */,
 				9911BFDE19D109E100B73C3F /* BNRItem.m in Sources */,
 				9911BFB619D104D000B73C3F /* MasterViewController.m in Sources */,
 				9911BFE119D10A5400B73C3F /* BNRItemStore.m in Sources */,

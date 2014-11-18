@@ -8,6 +8,7 @@
 
 #import "BNRDetailViewController.h"
 #import "BNRItem.h"
+#import "BNRImageStore.h"
 @interface BNRDetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *serialNumberField;
@@ -54,6 +55,13 @@
     }
     
     self.dateLabel.text = [dateFormatter stringFromDate:item.dateCreated];
+    
+    NSString *itemKey = self.item.itemKey;
+    
+    // grab the image
+    UIImage *imageToDisplay = [[BNRImageStore sharedStore] imageForKey:itemKey];
+    
+    self.imageView.image = imageToDisplay;
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -72,5 +80,22 @@
 {
     _item = item;
     self.navigationItem.title = _item.itemName;
+}
+
+#pragma mark - UIImageView methods
+- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    // Get the picked image from info dictionary.
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    
+    // now put it in the image store
+    [[BNRImageStore sharedStore] setImage:image
+                                   forKey:self.item.itemKey];
+    // put that image and 'go full'
+    self.imageView.image = image;
+    
+    // now dismiss the picker
+    [self dismissViewControllerAnimated:YES completion:NULL];
+    
 }
 @end
