@@ -9,7 +9,7 @@
 #import "BNRDetailViewController.h"
 #import "BNRItem.h"
 #import "BNRImageStore.h"
-@interface BNRDetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface BNRDetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *serialNumberField;
 @property (weak, nonatomic) IBOutlet UITextField *valueField;
@@ -20,6 +20,8 @@
 @end
 
 @implementation BNRDetailViewController
+
+
 - (IBAction)takePicture:(id)sender
 {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
@@ -35,6 +37,9 @@
     imagePicker.delegate = self;
     
     [self presentViewController:imagePicker animated:YES completion:NULL];
+}
+- (IBAction)backgroundTapped:(id)sender {
+    [self.view endEditing:YES];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -98,4 +103,12 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
     
 }
+
+#pragma mark - UITextField methods
+- (BOOL) textFieldShouldReturn:(UITextField *)textField
+{
+    [ textField resignFirstResponder];
+    return YES;
+}
+
 @end
