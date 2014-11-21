@@ -21,6 +21,10 @@
 
 @implementation BNRDetailViewController
 
+- (IBAction)deletePicture:(id)sender {
+    self.imageView.image = nil;
+    [[BNRImageStore sharedStore] deleteImageForKey:self.item.itemKey];
+}
 
 - (IBAction)takePicture:(id)sender
 {

@@ -79,6 +79,11 @@
                                 <action selector="takePicture:" destination="-1" id="eJU-I8-EWo"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem title="Delete Photo" id="hBm-sw-ESd">
+                            <connections>
+                                <action selector="deletePicture:" destination="-1" id="ob7-Ge-lbQ"/>
+                            </connections>
+                        </barButtonItem>
                     </items>
                 </toolbar>
             </subviews>
