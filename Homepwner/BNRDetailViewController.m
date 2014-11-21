@@ -91,7 +91,7 @@
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     // Get the picked image from info dictionary.
-    UIImage *image = info[UIImagePickerControllerEditedImage];
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
     
     // now put it in the image store
     [[BNRImageStore sharedStore] setImage:image
